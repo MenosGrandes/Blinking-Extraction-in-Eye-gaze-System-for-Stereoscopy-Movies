@@ -131,7 +131,15 @@ qt=false%
 
 % correct bad hyphenation here
 \hyphenation{op-tical net-works semi-conduc-tor}
+%Make plots
+\usepackage{pgfplotstable}
+\usepackage{pgfplots}
 
+\pgfplotsset{compat=1.15}
+
+\usepackage{graphicx}
+\usepackage{subcaption}
+\graphicspath{ {images/} }
 %% END COPYING HERE
 
 
@@ -163,7 +171,8 @@ Insitute 2\\
 \email{...}
 }
 \fi
-			
+
+
 \maketitle
 \iffalse
 \begin{abstract}
@@ -177,17 +186,47 @@ data science algorithms, stereoscopy, blinking extraction, Eye-gaze systems
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Introduction}\label{sec:intro}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-Gaze motion research has started in 1879 when French ophthalmologist Louis Emile Javal came to conclusion that observer does not sweep smoothly along the text with his eyes, but with a series of stops and quick saccades\cite{Winery}.  Since his first observation, the eye-tracking devices was developed. Firstly, those devices were very simple, readers had to wear a type of contact lens with a small opening for the pupil. The lens was attached to a pointer which changed its position following the movements of the eye. The significance of those studies has led to a growth of new, more complicated devices that can automatically measure gaze point. The most common and cheap devices are from Tobii and EyeTribe company.
+Gaze motion research has started in 1879 when French ophthalmologist Louis Emile Javal came to conclusion that observer does not sweep smoothly along the text with his eyes, but with a series of stops and quick saccades\cite{Winery}.  Since his first observation, the eye-tracking devices was developed. Firstly, those devices were very simple, readers had to wear a type of contact lens with a small opening for the pupil. The lens was attached to a pointer which changed its position following the movements of the eye. The significance of those studies has led to a growth of new, more complicated devices that can automatically measure gaze point. The most common devices are from Tobii and EyeTribe company.
 
 
 \section{Tobii X2}
-The Tobii X2 is a standalone eyetracker that can be used in various setups  by attaching it to monitors, laptops or for performing eye tracking on physical objects. This small device measuring 184mm in length is capable of track large objects at close distance, up to 36 gaze angle. It have sampling rate 60Hz and system latency under 35ms and it is aimed at determining precisely where the participants are looking, the gaze point, timing, duration of fixations and eye movements such as saccades, for example. This device using Tobii EyeCore\textregistered algorithms.
+The Tobii X2 is a standalone eyetracker that can be used in various setups  by attaching it to monitors, laptops or for performing eye tracking on physical objects. It have sampling rate 60Hz and system latency under 35ms and it is aimed at determining precisely where the participants are looking, the gaze point, timing, duration of fixations and eye movements such as saccades, for example. This device using Tobii EyeCore\textsuperscript{\tiny\textregistered} algorithm.
 \section{EyeTribe}
-Second device is also capable of sampling data in 30Hz and 60Hz with less than 20ms latency at 60Hz. 
-
+Second device is also capable of sampling data in 30Hz and 60Hz with less than 20ms latency at 60Hz. This equipment have a way worse precision and has more trouble compensating for users that move their head when being tracked. 
 
 \section{Blink extraction}
-Tracking of eye gaze and movement are based on searching the pupil center, pupil ellipse, the shape of eye etc. Blinking is most often an involuntary act of shutting and opening the eyelid. When it occurs the eye is automatically closed, so the the position of it will be lost. Thats why filtering noise caused by blinking is an important task.
+Tracking of eye gaze and movement are based on searching the pupil center, pupil ellipse, the shape of eye etc. Blinking is most often an involuntary act of shutting and opening the eyelid. When it occurs the eye is automatically closed, so the the position of it will be lost. Thats why filtering noise caused by blinking is an important task. 
+\par As it can be seen at \figurename\ref{fig:data} gaze point from movie can be visualized as set of 2d points or degrees. But when blinking occurs the position of gaze are automatically set to $(0,0)$ point. In \cite{4274377} the way to compensate was proposed, simple feedback loop with a delay factor \figurename\ref{fig:3}
+
+\begin{figure}
+\centering
+
+\begin{tikzpicture}[domain=0:3,scale=0.8]
+\begin{axis}[
+enlargelimits=true,
+xlabel=x coordinates of gaze point,
+ylabel=y coordinates of gaze point
+]
+\addplot+[
+only marks,
+scatter,
+mark=halfcircle*,
+mark size=3.0pt,
+]
+table[x=pos_x_1m_normalized,y=pos_y_1m_normalized]
+{data.dat};
+\end{axis}
+\end{tikzpicture}
+\caption{Gaze point gathered from movie.} \label{fig:data}
+
+		\includegraphics[height=5cm ,width=7cm]{blinkReduction.png}
+	\caption{The proposed signal processing procedure reduced the blinking
+		effect.\cite{4274377}}\label{fig:3}
+
+
+\end{figure}
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \bibliographystyle{splncs03}
 \bibliography{paper}
