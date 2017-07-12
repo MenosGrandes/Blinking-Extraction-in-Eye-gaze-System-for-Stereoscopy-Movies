@@ -137,15 +137,15 @@ qt=false%
 
 \begin{document}
 
-\title{Paper Title}
+\title{Blinking Extraction in Eye gaze System for Stereoscopy Movies}
 %If Title is too long, use \titlerunning
 %\titlerunning{Short Title}
 
 %Single insitute
-\author{Firstname Lastname \and Firstname Lastname}
+\author{Filip Rynkiewicz \and Piotr Napieralski}
 %If there are too many authors, use \authorrunning
 %\authorrunning{First Author et al.}
-\institute{Institute}
+\institute{Institute of Information Technology, Lodz University of Technology}
 
 %Multiple insitutes
 %Currently disabled
@@ -165,76 +165,33 @@ Insitute 2\\
 \fi
 			
 \maketitle
-
+\iffalse
 \begin{abstract}
 Abstract goes here
 \end{abstract}
-
+\fi
 \begin{keywords}
-keyword1, keyword2
+data science algorithms, stereoscopy, blinking extraction, Eye-gaze systems
 \end{keywords}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Introduction}\label{sec:intro}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\blindtext\todo{Refine me}
+Gaze motion research has started in 1879 when French ophthalmologist Louis Emile Javal came to conclusion that observer does not sweep smoothly along the text with his eyes, but with a series of stops and quick saccades.  Since his first observation, the eye-tracking devices was developed\cite{Winery}. Firstly, those devices were very simple, readers had to wear a type of contact lens with a small opening for the pupil. The lens was attached to a pointer which changed its position following the movements of the eye [1]. The significance of those studies has led to a growth of new, more complicated devices that can automatically measure gaze point. The most common and cheap devices are from Tobii and EyeTribe company.
 
-Winery~\cite{Winery} is graphical \commentontext{modeling}{modeling with one \enquote{l}, because of AE} tool.
 
-\begin{figure}
-Simple Figure
-\caption{Simple Figure}
-\label{fig:simple}
-\end{figure}
+\section{Tobii X2}
+The Tobii X2 is a standalone eyetracker that can be used in various setups  by attaching it to monitors, laptops or for performing eye tracking on physical objects. This small device measuring 184mm in length is capable of track large objects at close distance, up to 36 gaze angle. There are two variants of this equipment Tobii X2-30 and Tobii X2-60. First one have sampling rate 30Hz and system latency at 50-70ms and it is aimed at determining precisely where the participants are looking, the gaze point,rather than studying timing, duration of fixations or eye movements such as saccades, for example. Whereas second one have sampling rate 60Hz and system latency under 35ms and is aimed for more complicated data gathering than the 30hz version.
+\section{EyeTribe}
+Second device is also capable of sampling data in 30Hz and 60Hz with less than 20ms latency at 60Hz. 
 
-\begin{table}
-\caption{Simple Table}
 
-\label{tab:simple}
-Simple Table
-\end{table}
-
-cref Demonstration: Cref at beginning of sentence, cref in all other cases.
-
-\Cref{fig:simple} shows a simple fact, although \cref{fig:simple} could also show something else.
-
-\Cref{tab:simple} shows a simple fact, although \cref{tab:simple} could also show something else.
-
-\Cref{sec:intro} shows a simple fact, although \cref{sec:intro} could also show something else.
-
-Brackets work as designed:
-<test>
-
-The symbol for powerset is now correct: $\powerset$ and not a Weierstrass p ($\wp$).
-
-\begin{inparaenum}
-\item All these items...
-\item ...appear in one line
-\item This is enabled by the paralist package.
-\end{inparaenum}
-
-``something in quotes'' using plain tex or use \enquote{the enquote command}.
-
-You can now write words containing hyphens which are hyphenated (application"=specific) at other places.
-This is enabled by an additional configuration of the babel package.
-In case you write \enquote{application-specific}, then the word will only be hyphenated at the dash.
-You can also write applica\allowbreak{}tion-specific, but this is much more effort.
-
-\section{Conclusion and Outlook}
-
-\subsubsection*{Acknowledgments}
-...
-
-In the bibliography, use \texttt{\textbackslash textsuperscript} for ``st'', ``nd'', ...:
-E.g., \enquote{The 2\textsuperscript{nd} conference on examples}.
-When you use \href{https://www.jabref.org}{JabRef}, you can use the clean up command to achieve that.
-See \url{https://help.jabref.org/en/CleanupEntries} for an overview of the cleanup functionality.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \bibliographystyle{splncs03}
 \bibliography{paper}
 
-All links were last followed on October 5, 2014.
+All links were last followed on \today
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \end{document}
