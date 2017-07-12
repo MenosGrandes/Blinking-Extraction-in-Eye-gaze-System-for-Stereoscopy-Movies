@@ -177,16 +177,17 @@ data science algorithms, stereoscopy, blinking extraction, Eye-gaze systems
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Introduction}\label{sec:intro}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-Gaze motion research has started in 1879 when French ophthalmologist Louis Emile Javal came to conclusion that observer does not sweep smoothly along the text with his eyes, but with a series of stops and quick saccades.  Since his first observation, the eye-tracking devices was developed\cite{Winery}. Firstly, those devices were very simple, readers had to wear a type of contact lens with a small opening for the pupil. The lens was attached to a pointer which changed its position following the movements of the eye [1]. The significance of those studies has led to a growth of new, more complicated devices that can automatically measure gaze point. The most common and cheap devices are from Tobii and EyeTribe company.
+Gaze motion research has started in 1879 when French ophthalmologist Louis Emile Javal came to conclusion that observer does not sweep smoothly along the text with his eyes, but with a series of stops and quick saccades\cite{Winery}.  Since his first observation, the eye-tracking devices was developed. Firstly, those devices were very simple, readers had to wear a type of contact lens with a small opening for the pupil. The lens was attached to a pointer which changed its position following the movements of the eye. The significance of those studies has led to a growth of new, more complicated devices that can automatically measure gaze point. The most common and cheap devices are from Tobii and EyeTribe company.
 
 
 \section{Tobii X2}
-The Tobii X2 is a standalone eyetracker that can be used in various setups  by attaching it to monitors, laptops or for performing eye tracking on physical objects. This small device measuring 184mm in length is capable of track large objects at close distance, up to 36 gaze angle. There are two variants of this equipment Tobii X2-30 and Tobii X2-60. First one have sampling rate 30Hz and system latency at 50-70ms and it is aimed at determining precisely where the participants are looking, the gaze point,rather than studying timing, duration of fixations or eye movements such as saccades, for example. Whereas second one have sampling rate 60Hz and system latency under 35ms and is aimed for more complicated data gathering than the 30hz version.
+The Tobii X2 is a standalone eyetracker that can be used in various setups  by attaching it to monitors, laptops or for performing eye tracking on physical objects. This small device measuring 184mm in length is capable of track large objects at close distance, up to 36 gaze angle. It have sampling rate 60Hz and system latency under 35ms and it is aimed at determining precisely where the participants are looking, the gaze point, timing, duration of fixations and eye movements such as saccades, for example. This device using Tobii EyeCore\textregistered algorithms.
 \section{EyeTribe}
 Second device is also capable of sampling data in 30Hz and 60Hz with less than 20ms latency at 60Hz. 
 
 
-
+\section{Blink extraction}
+Tracking of eye gaze and movement are based on searching the pupil center, pupil ellipse, the shape of eye etc. Blinking is most often an involuntary act of shutting and opening the eyelid. When it occurs the eye is automatically closed, so the the position of it will be lost. Thats why filtering noise caused by blinking is an important task.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \bibliographystyle{splncs03}
 \bibliography{paper}
