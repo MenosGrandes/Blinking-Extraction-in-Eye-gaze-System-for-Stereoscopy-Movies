@@ -186,36 +186,33 @@ data science algorithms, stereoscopy, blinking extraction, Eye-gaze systems
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Introduction}\label{sec:intro}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-Gaze motion research has started in 1879 when French ophthalmologist Louis Emile Javal came to conclusion that observer does not sweep smoothly along the text with his eyes, but with a series of stops and quick saccades\cite{Winery}.  Since his first observation, the eye-tracking devices was developed. Firstly, those devices were very simple, readers had to wear a type of contact lens with a small opening for the pupil. The lens was attached to a pointer which changed its position following the movements of the eye. The significance of those studies has led to a growth of new, more complicated devices that can automatically measure gaze point. The rapid advances in information technology and more modern eye tracking devices today was developed. These devices give the possibility for detecting a very complex and dynamic factors in the movie environment. These characteristics allow to evaluate the experience of the viewer \cite{mital2011clustering}.
-Using an eye-tracking method to evaluate a viewer's image allows to analyze the experience of the viewer, as well explore the visual system along with potential processes.
+Gaze motion research has started in 1879 when French ophthalmologist Louis Emile Javal came to a conclusion that observer does not sweep smoothly along the text with his eyes, but with a series of stops and quick saccades\cite{Winery}.  Since his first observation, the eye-tracking devices were developed. Firstly, those devices were very simple, readers had to wear a type of contact lens with a small opening for the pupil. The lens was attached to a pointer which changed its position following the movements of the eye. The significance of those studies has led to a growth of new, more complicated devices that can automatically measure gaze point. With the rapid advances in information technology, more modern eye tracking devices were developed. These devices give the possibility of detecting a very complex and dynamic factors in the movie environment. These characteristics allows us to evaluate the experience of the viewer \cite{mital2011clustering}.
+Using an eye-tracking method to evaluate a viewer's image allows to analyze the experience of the viewer, as well as explore the visual system along with potential processes.
 The factors that affect the perception of the image are composed of very complex information. Significant is the provocation of the researched group and its influence on the interpretation of the content conveyed in the film image. Measurement of visual discomfort can be done by monitoring the physiological response of the observer. Such reactions include eye pressure, blink frequency, or electromagnetic activity of the brain \cite{Fornalczyk_Napieralski_Szajerman_Wojciechowski_2015, Fornalczyk_Napieralski_Szajerman_Wojciechowski_20152}.
 
 
 
 \section{Blinking as a factor of visual comfort}
-Tracking of eye gaze and movement are based on searching the pupil center, pupil ellipse, the shape of eye etc. Blinking is most often an involuntary act of shutting and opening the eyelid. When it occurs the eye is automatically closed, so the the position of it will be lost. Thats why filtering noise caused by blinking is an important task. 
-
-
-The ability to measure the frequency of blinking, allows you to check the observer tiredness. In publications \cite{5606312, 6211573} has been shown that the blink frequency is significantly increased when observing 3D images. Eye fatigue additionally increased blinking frequency. In conclusion, it can be assumed that the blinking of the eyes varies depending on the conditions: reading, resting or observing 2D or 3D images. The relationship between blinking and visual discomfort of 3D image observation has been investigated, resulting from faulty disparity, speed, and type of motion of the scene objects (circular motion on the image plane, static scenes, and inward motion) \cite{00789026}. 
+Tracking of eye gaze and movement are based on searching the pupil center, pupil ellipse, the shape of eye etc. Blinking is most often an involuntary act of shutting and opening the eyelid. When it occurs the eye is automatically closed, so the the position of it will be lost. Thats why filtering noise caused by blinking is an important task. The ability to measure the frequency of blinking, allows you to check the observer tiredness. In publications \cite{5606312, 6211573} has been shown that the blink frequency is significantly increased when observing 3D images. Eye fatigue additionally increased blinking frequency. 
+\par In conclusion, it can be assumed that the blinking of the eyes varies depending on the conditions: reading, resting or observing 2D or 3D images. The relationship between blinking and visual discomfort of 3D image observation has been investigated, it is resulting from faulty disparity, speed, and type of motion of the scene objects (circular motion on the image plane, static scenes, and inward motion) \cite{00789026}. 
 
 \section{Proposed solution}
 The most common devices are from Tobii and EyeTribe company. 
-The Tobii X2 is a standalone eyetracker that can be used in various setups by attaching it to monitors, laptops or for performing eye tracking on physical objects. It have sampling rate 60Hz and system latency under 35ms and it is aimed at determining precisely where the participants are looking, the gaze point, timing, duration of fixations and eye movements such as saccades, for example. This device using Tobii EyeCore algorithm. 
+The Tobii X2 is a standalone eye-tracker that can be used in various setups by attaching it to the monitors, laptops or for performing eye tracking on physical objects. It has sampling rate 60Hz and system latency under 35ms and it is aimed at determining precisely where the participants are looking, the gaze point, timing, duration of fixations and eye movements such as saccades, for example. This device is using Tobii EyeCore algorithm. 
 Second device is also capable of sampling data in 30Hz and 60Hz with less than 20ms latency at 60Hz. This equipment have a way worse precision and has more trouble compensating for users that move their head when being tracked. 
-
+\newline\par
 During the research, both devices were tested.
 Conducted research have shown a relatively complex structure of visual perception, taking into account the experience of the viewer.
 For the tested devices under the lighting conditions that prevailed at the test site (daylight falling through the window) was unable to register all blinks.
 
 \begin{itemize}
-  \item the device often interpreted the squinting as a blink
-  \item the respondents, despite informing them not to move during the study, unfortunately moved on. This could have led to the blinking of recorded blinks.
+  \item the device often interpreted the squinting as a blink,
+  \item the respondents, despite informing them not to move during the study, unfortunately moved on,
   \item other measurement errors \ldots
 \end{itemize}
 
-To increase the reliability of the measurement of the focus points of the viewer's eyes and the correct recording of eye blinks. For this purpose, an additional human face image recorder (GoPro camera) was used to record the face image during the tests.
-A comparison of the manual analysis of the video recording results with the measurements returned by the Eyetribe indicated that it was not as reliable as the blinks previously thought.
-The device unexpectedly often interpreted eye loss as a batting factor. The test results became more reliable after replacing the EyeTribe device with Tobii's EyeX. Blink reliability tests proved to be much better than the EyeTribe, but still not enough.
+To increase the reliability of the measurement of the focus points of the viewer's eyes and the correct recording of eye blinks, an additional human face image recorder (GoPro camera) was used to record the face image during the tests.
+A comparison of the manual analysis of the video recording results with the measurements returned by the EyeTribe indicated that  result from the eye-tracker were not as reliable as it was previously thought. The device unexpectedly often interpreted eye loss as a batting factor. The test results became more reliable after replacing the EyeTribe device with Tobii's X2. Blink reliability tests proved to be much better than the EyeTribe, but still not enough.
 
 In our research we try to identify reliable blinks, eliminating the noise resulting from measuring blanks.
 
